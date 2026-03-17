@@ -1,8 +1,18 @@
+# Node
 node_modules/
 build/
 dist/
 coverage/
-.DS_Store
-*.log
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Env
 .env*
 !.env.example
+
+# Misc
+.DS_Store
+*.log
