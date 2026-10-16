@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply transition-colors duration-300;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-[#030712] dark:text-slate-100 antialiased transition-colors duration-300;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Glassmorphism custom utilities for Dark & Light modes */
+.glass-panel {
+  @apply bg-white/80 border-slate-200 text-slate-900 dark:bg-slate-950/65 dark:border-sky-500/15 dark:text-slate-100 backdrop-blur-xl border;
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  @apply bg-slate-100 border-purple-400/40 shadow-lg dark:bg-slate-900/85 dark:border-purple-500/40 dark:shadow-[0_10px_30px_-10px_rgba(168,85,247,0.25)];
+  transform: translateY(-2px);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-sky-600 to-indigo-600 dark:from-sky-400 dark:via-purple-400 dark:to-indigo-300;
+}
+
+.text-gradient-cyan {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-500;
+}
+
+/* Custom scrollbars for light and dark modes */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-[#030712];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-700;
+}
